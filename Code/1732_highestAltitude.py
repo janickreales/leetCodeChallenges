@@ -3,8 +3,10 @@
 gain = [-5,1,5,0,-7]
 
 def largestAltitude(gain):
+    n = len(gain)
     altidude = [0]
-    for i in range(len(gain)):
+
+    for i in range(n):
         altidude.append(gain[i]+altidude[i])
     
     return f'The altitudes are: {altidude} \nMaxAltitude = {max(altidude)}\n'

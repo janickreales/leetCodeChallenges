@@ -26,10 +26,29 @@ def lengthOfLongestSubstring(s):
 
     return f'Longest substring is "{str_out}" - with a lenght of {max_len}'
 
+
+### OPTIMIZE VERSION OBTAINED BY PASSING THE PREVIOUS FUNCTION TO CHATGPT
+def lengthOfLongestSubstring_gpt(s):
+    char_dict = {}
+    max_len = 0
+    start = 0
+
+    for i, char in enumerate(s):
+        if char in char_dict and start <= char_dict[char]:
+            start = char_dict[char] + 1
+        else:
+            max_len = max(max_len, i - start + 1)
+        char_dict[char] = i
+
+    return max_len
+
+
 print(lengthOfLongestSubstring('abcabcbb'))
-print(lengthOfLongestSubstring('bbbbb'))
-print(lengthOfLongestSubstring('pwwkew'))
-print(lengthOfLongestSubstring('jarstoauglsgjw'))
-print(lengthOfLongestSubstring(''))
+print(lengthOfLongestSubstring_gpt('abcabcbb'))
+
+# print(lengthOfLongestSubstring('bbbbb'))
+# print(lengthOfLongestSubstring('pwwkew'))
+# print(lengthOfLongestSubstring('jarstoauglsgjw'))
+# print(lengthOfLongestSubstring(''))
 
 
