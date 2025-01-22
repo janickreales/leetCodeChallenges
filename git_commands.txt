@@ -1,0 +1,25 @@
+- git diff 			: file differents not yet staged
+- git commit -m "message" 	: commit all tracked changes
+- git status 			: show the state of your working directory
+- git add "file/path" 		: Add file(s) to staging area
+- git checkout -b branch_name 	: create and switch to a new branch
+- git checkout branch_name 	: swith to branch_name
+- git commit --amend 		: modify last commit
+- git push origin branch_name 	: Push changes to a remote
+- git pull 			: Fetch and merge remote changes
+- git rebase -i 		: Rebase iteractively, rewrite commit history
+- git clone 			: Create local commit of a remote report
+- git merge 			: merge branches together
+- git log --stat		: show commit logs with stats
+- git stash			: stash changes for later
+- git stash pop			: apply and remove stashed changes
+- git show commit_id		: show details about a commit
+- git reset			: undo commit by moving branch reference
+- git reset HEAD~1		: undo last commit, preserving changes locally
+- git reset --hard		: reset to a previous commit, erasing all uncommited changes
+- git format-patch -1 commit_id	: create a patch file for a specific commit
+- git apply patch_file_name 	: apply changes from a patch file
+- git branch			: list branches
+- git branch -D branch_name	: delete a branch forcefully
+- git revert			: undo commits by creating a new commit
+- git cherry-pick commit_id 	: apply changes from a specific commit
