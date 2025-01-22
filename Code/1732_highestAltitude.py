@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # https://leetcode.com/problems/find-the-highest-altitude/
 
 gain = [-5,1,5,0,-7]
@@ -15,7 +14,6 @@ def largestAltitude(gain):
 gain = [-5,1,5,0,-7]
 print(largestAltitude(gain))
 gain = [-4,-3,-2,-1,4,3,2]
-=======
 # https://leetcode.com/problems/find-the-highest-altitude/
 
 gain = [-5,1,5,0,-7]
@@ -30,5 +28,4 @@ def largestAltitude(gain):
 gain = [-5,1,5,0,-7]
 print(largestAltitude(gain))
 gain = [-4,-3,-2,-1,4,3,2]
->>>>>>> Stashed changes
 print(largestAltitude(gain))        
