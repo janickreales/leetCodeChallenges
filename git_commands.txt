@@ -1,16 +1,16 @@
 - git diff 			: file differents not yet staged
 	- git diff "path/to/file"		: differences in a specific file
-	- git diff --staged			: differences for files in staging area
-	- git diff --cached			: differences for files in staging área
+	- git diff --staged				: differences for files in staging area
+	- git diff --cached				: differences for files in staging área
 	- git diff <commit_1> <commit_2>
 	- git diff <branch> 			: compares actual_branch with the specified branch
 	- git diff --name-only 			: just shows names, not what changed inside the files
 
-- git commit -m "message" 	: commit all tracked changes
 
 - git status 			: show the state of your working directory
 	- git status -s				: output in a short format
 	- git status --ignored			: shows files in file .gitignore
+
 
 - git add "file/path" 		: Add file(s) to staging area
 	- git add .				: adds just new or modified files
@@ -18,18 +18,72 @@
 	- git add -u				: just adds tracked files. Not new files. 
 	- git add -n				: to see what changes will be added
 	- git add --dry-run			: to see what changes will be added
+	
 
-- git checkout -b branch_name 	: create and switch to a new branch
-- git checkout branch_name 	: swith to branch_name
-- git commit --amend 		: modify last commit
-- git push origin branch_name 	: Push changes to a remote
-- git pull 			: Fetch and merge remote changes
-- git rebase -i 		: Rebase iteractively, rewrite commit history
-- git clone 			: Create local commit of a remote report
-- git merge 			: merge branches together
-- git log --stat		: show commit logs with stats
-- git stash			: stash changes for later
-- git stash pop			: apply and remove stashed changes
+- git commit -m "message" 	: commit all tracked changes
+	- git commit --amend -m						: modify message of last commit
+	- git commit --amend --no-edit				: ammend without opening text editor
+	- git commit --allow-empty -m "message"		: empty commit / without changes
+	- git commit -m "message" <file/path>		: to commit specific files
+	- git commit --dry-run
+	
+
+- git checkout <branch_name> 	: swith to branch_name
+	- git checkout -b <branch_name> 			: create and switch to a new branch
+	- git checkout <commit_id> 					: switch to a specific commit
+	- git checkout -- <file-path>				: restore file to the state it had in the last commit
+	- git checkout <commit_id> -- <file-path> 	: review file in a commit without changing the branch
+	
+- git push <origin> <branch_name> 	: Push changes to a remote
+
+- git pull 									: Fetch and merge remote changes
+
+- git rebase -i 							: Rebase iteractively, rewrite commit history
+
+- git clone <url-repo> [<folder/path>]  	: Create local commit of a remote report
+
+- git merge <feature> 					: merge feature and current branch
+	- git merge --abort 				: if there are conflicts and you don't what to continue
+	- git merge --no-commit <feature>	: merge without commit. Useful when you need to make changes before a commit
+
+
+- git log 				: show history of commits
+	- git log --oneline				: shows a summarized history
+	- git log --stat				: show commit logs with stats
+	- git log --name-only 			: just show files that change in every commit
+	- git log --author="name" 		: filter by author
+	- git log -- <file/path>		: filter by file
+	- git log -p 					: show changes between commits
+	- git log -n <##>				: just bring the last ### commits
+	- git log --since="2 Weeks ago"
+	- git log --until="2023-12-31"
+	- git log --pretty=format:"%h - %an, %ar : %s"	: format the output
+													- %h	:	short hash
+													- %an	: author
+													- %ar	: relative time
+													- %s 	: commit message
+	
+	
+- git stash	-m "message"		: save changes for later (not committed)
+	- git stash apply 				: restore changes
+	- git stash apply stash@{1}		: restore changes in stash {1}
+	- git stash pop					: restore changes and remove stashed
+	- git stash list 				: list all current stashes
+	- git stash drop stash@{1}		: drop stash @{1}
+	- git stash clear 				: clear all stash
+	- git stash push <file> <file>	: save changes of specific files
+	
+	Use cases:
+	* When switching branches: If you have uncommitted changes and need to switch branches quickly
+	> git stash
+	> git checkout otra-rama
+	
+	* Before an update or pull: If you want to update your branch without losing your current changes
+	> git stash
+	> git pull
+	> git stash pop
+
+	
 - git show commit_id		: show details about a commit
 - git reset			: undo commit by moving branch reference
 - git reset HEAD~1		: undo last commit, preserving changes locally
