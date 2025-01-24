@@ -1,7 +1,24 @@
 - git diff 			: file differents not yet staged
+	- git diff "path/to/file"		: differences in a specific file
+	- git diff --staged			: differences for files in staging area
+	- git diff --cached			: differences for files in staging área
+	- git diff <commit_1> <commit_2>
+	- git diff <branch> 			: compares actual_branch with the specified branch
+	- git diff --name-only 			: just shows names, not what changed inside the files
+
 - git commit -m "message" 	: commit all tracked changes
+
 - git status 			: show the state of your working directory
+	- git status -s				: output in a short format
+	- git status --ignored			: shows files in file .gitignore
+
 - git add "file/path" 		: Add file(s) to staging area
+	- git add .				: adds just new or modified files
+	- git add -A				: also adds removed filed
+	- git add -u				: just adds tracked files. Not new files. 
+	- git add -n				: to see what changes will be added
+	- git add --dry-run			: to see what changes will be added
+
 - git checkout -b branch_name 	: create and switch to a new branch
 - git checkout branch_name 	: swith to branch_name
 - git commit --amend 		: modify last commit
