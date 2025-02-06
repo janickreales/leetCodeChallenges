@@ -102,9 +102,19 @@
 
 
 - git branch			: list branches
-- git branch -D branch_name	: delete a branch forcefully
+	- git branch 						: list local branches
+	- git branch -r 					: list remote branches
+	- git branch -a 					: list local and remote branches
+	- git branch <name>					: creates new branch without switchint to iteractively
+			- git checkout -b <name> 	: to create branch and switch
+	- git branch -m <name> <new_name>	: rename
+	- git branch -d <name> 				: removes branch
+	- git branch -D <name>				: delete a branch forcefully
+		- git push origin --delete nombre-rama	:	delete remote branch
+	- git branch -v						: shows last commit in each branch
+
+- git cherry-pick <commit_id> 			: apply changes from a specific commit
 
 - git format-patch -1 commit_id	: create a patch file for a specific commit
 - git apply patch_file_name 	: apply changes from a patch file
 
-- git cherry-pick commit_id 	: apply changes from a specific commit
