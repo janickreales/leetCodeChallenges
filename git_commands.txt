@@ -100,6 +100,7 @@
 	- git revert HEAD~3..HEAD				: reverts last 3 commits - creates a revert commit by each one
 	- git revert --no-commit HEAD~3..HEAD	: group reverts without commiting
 
+NO ME JODAS CON ESOS CAMBIOS
 
 - git branch			: list branches
 - git branch -D branch_name	: delete a branch forcefully
