@@ -84,13 +84,27 @@
 	> git stash pop
 
 	
-- git show commit_id		: show details about a commit
-- git reset			: undo commit by moving branch reference
-- git reset HEAD~1		: undo last commit, preserving changes locally
-- git reset --hard		: reset to a previous commit, erasing all uncommited changes
-- git format-patch -1 commit_id	: create a patch file for a specific commit
-- git apply patch_file_name 	: apply changes from a patch file
+- git show <commit_id>		: show details about a commit
+
+- git reset				: undo commit by moving branch reference
+	- git reset --soft HEAD~1			: moves branch back one commit - changes remain in staging
+	- git reset --mixed HEAD~1			: reset last commit - files preserve as untracked
+	- git reset --hard HEAD~1			: removes last commit definitely. IRREVOCABLE.
+	- git reset --hard <commit_id>		: moves branch to <commit_id> and removes later commits
+	- git reset HEAD <archivo.txt> 		: resets just <archivo.txt> to the state in the latest commit
+	- git reset abc1234 <archivo.txt>	: resets just <archivo.txt> to the state in a previous commit
+	
+- git revert			: undo commits by creating a new commit
+	- git revert HEAD						: undoes last commit and creates a new one with the reversion
+	- git revert <commit_id> 				: undoes changes from commit <commit_id> 
+	- git revert HEAD~3..HEAD				: reverts last 3 commits - creates a revert commit by each one
+	- git revert --no-commit HEAD~3..HEAD	: group reverts without commiting
+
+
 - git branch			: list branches
 - git branch -D branch_name	: delete a branch forcefully
-- git revert			: undo commits by creating a new commit
+
+- git format-patch -1 commit_id	: create a patch file for a specific commit
+- git apply patch_file_name 	: apply changes from a patch file
+
 - git cherry-pick commit_id 	: apply changes from a specific commit
